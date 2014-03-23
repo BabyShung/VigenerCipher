@@ -1,3 +1,5 @@
+package vigenere;
+
 /**
  * 
  * For this homework I picked the Vigener Cipher. The algorithm basically use a
