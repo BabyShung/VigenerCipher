@@ -45,7 +45,6 @@ public class Statistics {
 				bucket[index]++;
 			}
 			char maxFChar = getMaxCharacter(bucket);
-			System.out.println(maxFChar);
 			
 			int newV = (maxFChar - highestFrequencyLetter) % 26 ;
 			if(newV<0)

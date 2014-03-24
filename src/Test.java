@@ -7,14 +7,13 @@ public class Test {
 	public static void main(String[] args) {
 
 		FileOperation op = new FileOperation();
-		VigenerCipher vc = new VigenerCipher(true);// true means having spaces
+		
+		// true means having spaces for encrypt
+		VigenerCipher vc = new VigenerCipher(true);
 		Statistics s = new Statistics();
-
-		String ct = op.readFile("vigenere_nosp.txt");// read from
-														// vigenere_nosp.txt
-		// String dt = op.readFile("decrypt.txt");// read from decrypt.txt
-		// System.out.println(ct);
-		// System.out.println(dt);
+		
+		// read from vigenere_nosp.txt
+		String ct = op.readFile("vigenere_nosp.txt");
 
 		s.alphabetStatistics(ct);
 
@@ -25,11 +24,11 @@ public class Test {
 		s.frequency(ct, 0, 6);
 		s.frequency(ct, 0, 7);
 
-		String keyword = s.guessingKeyword(ct, 7);
+		String keyword = s.guessingKeyword(ct, 7);//get the keyword
 		String decrypttext = vc.decrypt(ct, keyword);// decrpty the ciphertext
 
-		System.out.println(keyword);
-		System.out.println(decrypttext);
+		System.out.println("keyword is: " + keyword);
+		System.out.println("plaintext is: " +decrypttext);
 
 		op.writeFile("vigenere_nosp_decrypt.txt", decrypttext);
 	}
